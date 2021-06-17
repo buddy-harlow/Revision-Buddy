@@ -9,7 +9,6 @@ overflow: hidden;
 background: url(${Banner}) no-repeat center;
 background-size: cover;
 
-
 `
 
 export const HeroContainer = styled.div`
@@ -34,7 +33,7 @@ export const HeroText = styled.h1`
     margin: auto;
     align-items:center;
     justify-content:center;
-    padding-bottom: 20px;
+    padding-bottom: 40px;
    
 `
 
@@ -50,4 +49,10 @@ export const HeroButton = styled(LinkR)`
     cursor: pointer;
     transition: all 0.2s ease-in-out;
     text-decoration: none;
+
+    &:hover{
+        transition: all 0.2s ease-in-out;
+        background: #fff;
+        color: #010606;
+    }
     `
