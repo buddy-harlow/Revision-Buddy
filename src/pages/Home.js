@@ -12,6 +12,7 @@ const Home = () => {
             <FullNav />
             <Hero />
             <AboutSection />
+            
         </>
     )
 }
