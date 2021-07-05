@@ -11,6 +11,12 @@ align-items: center;
 justify-content: space-around;
 width: 100%
 `
+export const Callout = styled.div`
+    padding-bottom: 26px;
+    font-weight: 700;
+    font-size: 30px;
+    color: #ADD8E6;
+`
 
 export const ColumnContainer = styled.div`
 display: flex;

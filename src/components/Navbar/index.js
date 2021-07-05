@@ -7,10 +7,9 @@ import {
     MobileIcon, 
     NavMenu, 
     NavItem, 
-    NavLinks,
-    NavBtn,
-    NavBtnLink 
+    NavLinks
  } from './NavbarElements'
+ import StdBtn from '../../atoms/std-btn'
 
 const Navbar = ({toggle}) => {
 
@@ -39,9 +38,7 @@ const Navbar = ({toggle}) => {
                         <NavLinks to="signup">Sign Up</NavLinks>
                     </NavItem>
                 </NavMenu>
-                <NavBtn>
-                    <NavBtnLink to="/sign-in">Sign In</NavBtnLink>
-                </NavBtn>
+                <StdBtn slug='/sign-in'>Sign In</StdBtn>
             </NavbarContainer>
         </Nav>
         </>

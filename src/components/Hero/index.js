@@ -1,5 +1,7 @@
 import React from 'react'
-import {HeroImage, HeroContainer, HeroText, HeroButton} from './HeroElements'
+import {HeroImage, HeroContainer, HeroText} from './HeroElements'
+import StdBtn from '../../atoms/std-btn'
+
 
 const Hero = () => {
     return (
@@ -7,7 +9,7 @@ const Hero = () => {
             <HeroImage>
             <HeroContainer>
                 <HeroText>A project management platform for audio engineers</HeroText>
-                <HeroButton>Sign Up</HeroButton>
+                <StdBtn slug="/">Sign Up</StdBtn>
             </HeroContainer>
             </HeroImage>
         </div>

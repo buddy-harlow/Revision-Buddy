@@ -1,7 +1,7 @@
 import React from 'react';
 
 import FormInput from '../Form-Input'
-import { SignInBlock, Buttons, Title, Button, Container, PageContainer} from './SignInElements'
+import { SignInBlock, Buttons, Title, Button} from './SignInElements'
 
 import { auth, signInWithGoogle } from '../../firebase/firebase.utils'
 
@@ -39,8 +39,7 @@ class SignIn extends React.Component{
 
     render() {
         return(
-            <PageContainer>
-            <Container>
+            <>
             <SignInBlock>
                 <Title>I already have an account</Title>
                 <span>Sign in with your email and password</span>
@@ -54,8 +53,7 @@ class SignIn extends React.Component{
                     </Buttons>
                 </form>
             </SignInBlock>
-            </Container>
-            </PageContainer>
+            </>
         )
     }
 }

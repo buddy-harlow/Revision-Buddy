@@ -1,7 +1,6 @@
-import styled from 'styled-components'
+import { styled } from 'styled-components';
 
-
-export const SignInBlock = styled.div`
+export const SignUpBlock = styled.div`
     width: 40%;
     display: flex;
     flex-direction: column;
