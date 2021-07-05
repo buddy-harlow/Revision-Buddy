@@ -1,5 +1,5 @@
 import React from 'react'
-import FormInput from '../Form-Input'
+import FormInput from '../../atoms/Form-Input'
 import {SignUpBlock, Title, Buttons, Button} from './SignUpElements'
 
 class SignUp extends React.Component{

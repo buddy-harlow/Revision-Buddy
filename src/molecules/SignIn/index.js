@@ -1,6 +1,6 @@
 import React from 'react';
-
-import FormInput from '../Form-Input'
+import FormInput from '../../atoms/Form-Input'
+import StdBtn from '../../atoms/std-btn'
 import { SignInBlock, Buttons, Title, Button} from './SignInElements'
 
 import { auth, signInWithGoogle } from '../../firebase/firebase.utils'
@@ -48,7 +48,7 @@ class SignIn extends React.Component{
                     <FormInput name="email" type="email" placeholder="Email" value={this.state.email} label="email" handleChange={this.handleChange} required />
                     <FormInput name="password" type="password" placeholder="Password" value={this.state.password} label="password" handleChange={this.handleChange} required />
                     <Buttons>
-                    <Button type="submit">Sign in</Button>
+                    <StdBtn to="/" type="submit">Sign in</StdBtn>
                     <Button onClick={signInWithGoogle} type="button" isGoogleSignIn>Sign in with Google</Button>
                     </Buttons>
                 </form>

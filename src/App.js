@@ -3,7 +3,7 @@ import React from 'react'
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 
 import Home from './pages/Home.js'
-import SignInPage from './pages/SignInPage/SignInPage';
+import SignInPage from './pages/SignInPage';
 import { auth } from './firebase/firebase.utils'
 
 class App extends React.Component {
