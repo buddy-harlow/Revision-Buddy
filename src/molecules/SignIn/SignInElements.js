@@ -2,10 +2,11 @@ import styled from 'styled-components'
 
 
 export const SignInBlock = styled.div`
-    width: 40%;
+    width: 60%;
     display: flex;
     flex-direction: column;
-
+    margin-left: 20%;
+    margin-right: 20%;
     @media (max-width: 768px) {
         
         width: 80%
@@ -16,6 +17,7 @@ export const SignInBlock = styled.div`
 export const Title = styled.h2`
     margin: 10px 0;
     color: #ADD8E6;
+    text-align: center;
 `
 export const Buttons = styled.div`
     display: flex;

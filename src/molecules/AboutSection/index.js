@@ -1,9 +1,7 @@
 import React from 'react'
-import {ColumnContainer, 
-    LeftContainer, 
-    RightContainer,
-    Callout,
-RowContainer} from './AboutSectionElements'
+import RowContainer from '../../atoms/RowContainer'
+import ColumnContainer from '../../atoms/ColumnContainer'
+import Callout from '../../atoms/Callout'
 import { MdLibraryMusic } from 'react-icons/md';
 
 const AboutSection = () => {
@@ -11,7 +9,7 @@ const AboutSection = () => {
         <>
         <RowContainer>
             <ColumnContainer>
-                <LeftContainer>
+                <div>
                     <Callout>Less Emails: More Mixing</Callout>
                      <p>The most creative part of Audio Engineering shouldn't be
                          managing client relations. Mix Buddy is a tool designed keep
@@ -19,12 +17,12 @@ const AboutSection = () => {
                          more time listening to critical material and less time tracking down
                          mix notes.
                      </p>
-                </LeftContainer>
+                </div>
             </ColumnContainer>
             <ColumnContainer>
-                <RightContainer>
-                    <MdLibraryMusic />
-                </RightContainer>
+                <div>
+                    <MdLibraryMusic style={{fontSize: "10rem", color: "#ADD8E6"}}/>
+                </div>
             </ColumnContainer>
         </RowContainer>
         </>
