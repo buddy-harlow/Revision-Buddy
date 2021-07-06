@@ -1,5 +1,5 @@
 import React from 'react'
-import FullNav from '../components/FullNav'
+import FullNav from '../organisms/FullNav'
 import SignIn from '../molecules/SignIn'
 import Header from '../atoms/Header'
 import GeneralContainer from '../atoms/GeneralContainer'

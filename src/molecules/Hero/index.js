@@ -1,6 +1,8 @@
 import React from 'react'
-import {HeroImage, HeroContainer, HeroText} from './HeroElements'
+import HeroContainer from '../../atoms/Hero-Container'
+import HeroImage from '../../atoms/Hero-Image'
 import StdBtn from '../../atoms/std-btn'
+import HeroHeadline from '../../atoms/HeroHeadline'
 
 
 const Hero = () => {
@@ -8,7 +10,7 @@ const Hero = () => {
         <div>
             <HeroImage>
             <HeroContainer>
-                <HeroText>A project management platform for audio engineers</HeroText>
+                <HeroHeadline>A project management platform for audio engineers</HeroHeadline>
                 <StdBtn slug="/">Sign Up</StdBtn>
             </HeroContainer>
             </HeroImage>
