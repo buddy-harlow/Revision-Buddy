@@ -2,7 +2,7 @@ import React, { useState} from 'react'
 import Navbar from  '../../molecules/Navbar';
 import SideBar from '../../molecules/SideBar'
 
-const FullNav = () => {
+const FullNav = ({currentUser}) => {
     const [isOpen, setIsOpen] = useState(false);
 
     const toggle = () => {
@@ -12,7 +12,7 @@ const FullNav = () => {
     return (
         <>
         <SideBar isOpen={isOpen} toggle={toggle}/>
-        <Navbar toggle={toggle}/>
+        <Navbar toggle={toggle} currentUser={currentUser}/>
         </>
         
     )

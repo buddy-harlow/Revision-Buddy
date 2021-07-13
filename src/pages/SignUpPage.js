@@ -1,19 +1,16 @@
 import React from 'react'
-
-import SignIn from '../molecules/SignIn'
+import SignUp from '../molecules/SignUp'
 import { Header } from '../atoms/StyledComponents'
 import {SingleColumn, GeneralContainer} from '../atoms/StyledContainers'
 
 
 const SignInPage = () => {
-    
     return (
         <>
         <GeneralContainer>  
             <SingleColumn >
-            <Header>Sign in</Header>
-            
-            <SignIn />
+            <Header>Sign Up</Header>
+            <SignUp />
             </SingleColumn>
         </GeneralContainer>
         </>

@@ -1,8 +1,7 @@
 import styled from 'styled-components'
 
 export const FormGroup = styled.div`
-    position: relative;
-    margin: 45px 0;
+    
 `
 
 export const StyledInput = styled.input`
@@ -15,6 +14,7 @@ display: block;
 width: 100%;
 border: none;
 border-radius: 0;
+z-index: 0;
 border-bottom: 1px solid #ADD8E6;
 margin: 25px 0;
 

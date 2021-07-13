@@ -1,7 +1,8 @@
 import React from 'react';
 import FormInput from '../../atoms/Form-Input'
-import StdBtn from '../../atoms/std-btn'
-import { SignInBlock, Buttons, Title, Button} from './SignInElements'
+
+import { ButtonContainer, StandardButton, ButtonsSideBySide } from '../../atoms/StyledComponents';
+import { SignInBlock, Title, Button} from './SignInElements'
 
 import { auth, signInWithGoogle } from '../../firebase/firebase.utils'
 
@@ -42,15 +43,20 @@ class SignIn extends React.Component{
             <>
             <SignInBlock>
                 <Title>I already have an account</Title>
-                <span>Sign in with your email and password</span>
+                <p>Sign in with your email and password</p>
 
                 <form onSubmit={this.handleSubmit}>
                     <FormInput name="email" type="email" placeholder="Email" value={this.state.email} label="email" handleChange={this.handleChange} required />
                     <FormInput name="password" type="password" placeholder="Password" value={this.state.password} label="password" handleChange={this.handleChange} required />
-                    <Buttons>
-                    <StdBtn to="/" type="submit">Sign in</StdBtn>
-                    <Button onClick={signInWithGoogle} type="button" isGoogleSignIn>Sign in with Google</Button>
-                    </Buttons>
+                    <ButtonsSideBySide>
+                    <ButtonContainer>
+                    <StandardButton to="/" type="submit">Sign in</StandardButton>
+                    </ButtonContainer>
+                    <ButtonContainer>
+                    <Button onClick={signInWithGoogle} type="button" isGoogleSignIn>Sign in with Google</Button>   
+                    </ButtonContainer> 
+                    
+                    </ButtonsSideBySide>
                 </form>
             </SignInBlock>
             </>

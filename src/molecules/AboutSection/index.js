@@ -1,14 +1,15 @@
 import React from 'react'
-import RowContainer from '../../atoms/RowContainer'
-import ColumnContainer from '../../atoms/ColumnContainer'
-import Callout from '../../atoms/Callout'
+import { RowContainer } from '../../atoms/StyledContainers'
+import { Callout } from '../../atoms/StyledComponents'
+import {TwoColumn} from '../../atoms/StyledContainers'
+
 import { MdLibraryMusic } from 'react-icons/md';
 
 const AboutSection = () => {
     return (
         <>
         <RowContainer>
-            <ColumnContainer>
+            <TwoColumn>
                 <div>
                     <Callout>Less Emails: More Mixing</Callout>
                      <p>The most creative part of Audio Engineering shouldn't be
@@ -18,12 +19,12 @@ const AboutSection = () => {
                          mix notes.
                      </p>
                 </div>
-            </ColumnContainer>
-            <ColumnContainer>
+            </TwoColumn>
+            <TwoColumn>
                 <div>
                     <MdLibraryMusic style={{fontSize: "10rem", color: "#ADD8E6"}}/>
                 </div>
-            </ColumnContainer>
+            </TwoColumn>
         </RowContainer>
         </>
     )

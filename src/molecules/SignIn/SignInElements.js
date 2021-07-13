@@ -7,10 +7,15 @@ export const SignInBlock = styled.div`
     flex-direction: column;
     margin-left: 20%;
     margin-right: 20%;
+    font-size: 20px;
+    color: #ADD8E6;
     @media (max-width: 768px) {
         
         width: 80%
     }
+        :p{
+            display: none;
+        }
     
 `
 
