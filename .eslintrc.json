@@ -8,5 +8,9 @@
 	"extends": [
 		"standard",
 		"plugin:react/recommended"
-	]
+	],
+	"rules": {
+		"react/prop-types": 0,
+		"semi": ["error", "always"]
+	}
 }
