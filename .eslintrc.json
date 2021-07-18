@@ -1,0 +1,12 @@
+{
+	"env": {
+		"es2020": true
+	},
+	"parserOptions": {
+		"sourceType": "module"
+	},
+	"extends": [
+		"standard",
+		"plugin:react/recommended"
+	]
+}
