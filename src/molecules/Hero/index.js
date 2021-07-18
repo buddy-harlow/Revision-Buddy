@@ -1,11 +1,9 @@
-import React from 'react'
-import {HeroContainer} from '../../atoms/StyledContainers'
-import { StandardButton, ButtonContainer, HeroText, HeroImage } from '../../atoms/StyledComponents'
-
-
+import React from 'react';
+import { HeroContainer } from '../../atoms/StyledContainers';
+import { StandardButton, ButtonContainer, HeroText, HeroImage } from '../../atoms/StyledComponents';
 
 const Hero = () => {
-    return (
+  return (
         <div>
             <HeroImage>
             <HeroContainer>
@@ -16,7 +14,7 @@ const Hero = () => {
             </HeroContainer>
             </HeroImage>
         </div>
-    )
-}
+  );
+};
 
-export default Hero
+export default Hero;

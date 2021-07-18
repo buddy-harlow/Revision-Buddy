@@ -1,0 +1,16 @@
+{
+	"env": {
+		"es2020": true
+	},
+	"parserOptions": {
+		"sourceType": "module"
+	},
+	"extends": [
+		"standard",
+		"plugin:react/recommended"
+	],
+	"rules": {
+		"react/prop-types": 0,
+		"semi": ["error", "always"]
+	}
+}
