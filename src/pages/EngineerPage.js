@@ -6,16 +6,28 @@ import { Header, StandardButton, ButtonContainer } from '../atoms/StyledComponen
 import Record from './../molecules/Record'
 import AddBand from './../organisms/AddBand'
 
+import DeleteBand from './../organisms/DeleteBand'
+
 
 
 const EngineerPage = () => {
     const [albums, setAlbums] = useState([]);
-    const [showModal, setShowModal] = useState(false);
+    const [showBandModal, setShowBandModal] = useState(false);
+    const [showDeleteModal, setShowDeleteModal] = useState(false)
+    const [currentRecord, setCurrentRecord] = useState(null);
+    
 
-    const openModal = () => {
-        setShowModal(prev => !prev)
+    const openBandModal = () => {
+        setShowBandModal(prev => !prev)
     }
 
+    const onDelete = (album) => {
+        setCurrentRecord(album)
+        console.log(currentRecord)
+        setShowDeleteModal(prev => !prev)
+        
+    }
+    
     useEffect(() => {
         const fetchData = async () => {
             const db = firestore;
@@ -27,22 +39,34 @@ const EngineerPage = () => {
         }
         fetchData();
         
-    }, [showModal])
+    }, [showBandModal, showDeleteModal])
 
     return (
         <>
         <GeneralContainer>
             <Header>Projects</Header>
             <ButtonContainer>
-            <StandardButton onClick={openModal}>Add a Project</StandardButton>
+            <StandardButton onClick={openBandModal}>Add a Project</StandardButton>
             </ButtonContainer>
-            <AddBand showModal={showModal} setShowModal={setShowModal} />
+            <AddBand showBandModal={showBandModal} setShowBandModal={setShowBandModal} />
+            <DeleteBand showDeleteModal={showDeleteModal} setShowDeleteModal={setShowDeleteModal} currentRecord={currentRecord} setCurrentRecord={setCurrentRecord}></DeleteBand>
         </GeneralContainer>
         <BlackBackground>
         <GridContainer>
         {albums.map(album => (
             
-            <Record bandName={album.bandName} imgUrl={album.imgUrl} album={album}></Record>
+        
+            <Record 
+            bandName={album.bandName} 
+            imgUrl={album.imgUrl} 
+            album={album} 
+            showDeleteModal={showDeleteModal}
+            setShowDeleteModal={setShowDeleteModal}
+            onDelete={onDelete}
+            currentRecord={currentRecord}
+            setCurrentRecord={setCurrentRecord}
+            />
+            
                 
         ))}
         </GridContainer>
