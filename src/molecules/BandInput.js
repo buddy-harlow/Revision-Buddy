@@ -1,27 +1,26 @@
-import React, {useState} from 'react'
-import {firestore}  from '../firebase/firebase.utils'
-import {ButtonContainer, StandardButton, ButtonsSideBySide, StyledInput} from '../atoms/StyledComponents'
+import React, { useState } from 'react';
+import { firestore } from '../firebase/firebase.utils';
+import { ButtonContainer, StandardButton, ButtonsSideBySide, StyledInput } from '../atoms/StyledComponents';
 
+const BandInput = ({ album }) => {
+  const [bandName, setName] = useState(album.bandName);
 
-const BandInput = ({album}) => {
-    const [bandName, setName] = useState(album.bandName);
-    
-    const onUpdate = () => {
-        const db = firestore;
-        db.collection('albums').doc(album.id).set({...album, bandName})
-    }
+  const onUpdate = () => {
+    const db = firestore;
+    db.collection('albums').doc(album.id).set({ ...album, bandName });
+  };
 
-    const onDelete = () => {
-        const db = firestore;
-        db.collection('albums').doc(album.id).delete();
-    }
+  const onDelete = () => {
+    const db = firestore;
+    db.collection('albums').doc(album.id).delete();
+  };
 
-    return (
+  return (
         <>
-        <StyledInput value={bandName} 
+        <StyledInput value={bandName}
         onChange={(e) => {
-            setName(e.target.value);
-            }}
+          setName(e.target.value);
+        }}
         />
         <ButtonsSideBySide>
         <ButtonContainer>
@@ -32,7 +31,7 @@ const BandInput = ({album}) => {
         </ButtonContainer>
         </ButtonsSideBySide>
         </>
-    )
-}
+  );
+};
 
-export default BandInput
+export default BandInput;

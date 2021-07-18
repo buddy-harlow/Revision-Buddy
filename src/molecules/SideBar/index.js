@@ -1,18 +1,18 @@
-import React from 'react'
+import React from 'react';
 import {
-    SidebarContainer, 
-    Icon, 
-    CloseIcon, 
-    SidebarWrapper, 
-    SidebarMenu, 
-    SidebarLink, 
-    SideBtnWrap,
-    SidebarRoute
+  SidebarContainer,
+  Icon,
+  CloseIcon,
+  SidebarWrapper,
+  SidebarMenu,
+  SidebarLink,
+  SideBtnWrap,
+  SidebarRoute
 
-} from './SideBarElements'
+} from './SideBarElements';
 
-const SideBar = ({isOpen, toggle}) => {
-    return (
+const SideBar = ({ isOpen, toggle }) => {
+  return (
         <SidebarContainer isOpen={isOpen} onClick={toggle}>
             <Icon onClick={toggle}>
                 <CloseIcon />
@@ -34,7 +34,7 @@ const SideBar = ({isOpen, toggle}) => {
                 </SideBtnWrap>
             </SidebarWrapper>
         </SidebarContainer>
-    )
-}
+  );
+};
 
-export default SideBar
+export default SideBar;

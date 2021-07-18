@@ -9,7 +9,7 @@ export const SingleColumn = styled.div`
     margin-right: 10%;
     height: 90vh;
     
-`
+`;
 export const TwoColumn = styled.div`
 display: flex;
 flex-direction: column;
@@ -21,7 +21,7 @@ font-size: 1.4rem;
 &:p{
     font-size: 60px;
 }
-`
+`;
 export const ThreeColumn = styled.div`
 display: flex;
 flex-direction: column;
@@ -33,7 +33,7 @@ font-size: 1.4rem;
 &:p{
     font-size: 60px;
 }
-`
+`;
 export const RowContainer = styled.div`
 display: flex;
 flex-direction: row;
@@ -44,13 +44,13 @@ color: white;
 align-items: center;
 justify-content: space-around;
 width: 100%
-`
+`;
 export const BlackBackground = styled.div`
 background-color: black;
 width: 100%;
 padding-top: 30px;
 padding-bottom: 30px;
-`
+`;
 export const GridContainer = styled.div`
     display: grid;
     gap: 1rem;
@@ -58,14 +58,14 @@ export const GridContainer = styled.div`
     align-items: center;
     justify-items: center;
     grid-template-columns: repeat(auto-fit, minmax(295px, 1fr));
-`
+`;
 
 export const GeneralContainer = styled.div`
     width: 100%;
     background-color: #000000;
     display: flex;
     flex-direction: column;
-`
+`;
 
 export const HeroContainer = styled.div`
 position: absolute;
@@ -79,4 +79,4 @@ width: 100;
 font-weight: 700;
 text-transform: uppercase;
  
-`
+`;

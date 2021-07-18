@@ -1,8 +1,8 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const FormGroup = styled.div`
     
-`
+`;
 
 export const StyledInput = styled.input`
 background: none;
@@ -26,4 +26,4 @@ margin: 25px 0;
     color: #ADD8E6;
   @include shrinkLabel();
 }
-`
+`;

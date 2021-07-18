@@ -1,8 +1,7 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from 'react';
+import styled from 'styled-components';
 import { Link as LinkR } from 'react-router-dom';
-import Banner from './../images/Hero.jpg'
-
+import Banner from './../images/Hero.jpg';
 
 // Text-styles
 export const Header = styled.h1`
@@ -12,7 +11,7 @@ export const Header = styled.h1`
     justify-content: center;
     padding-bottom: 50px;
     padding-top: 50px;
-`
+`;
 export const HeroText = styled.h1`
 text-transform: uppercase;
 text-align: center;
@@ -24,7 +23,7 @@ align-items:center;
 justify-content:center;
 padding-bottom: 40px;
 
-`
+`;
 export const HeroImage = styled.div`
 position: relative;
 height: 500px;
@@ -32,14 +31,14 @@ overflow: hidden;
 background: url(${Banner}) no-repeat center;
 background-size: cover;
 
-`
+`;
 
 export const Callout = styled.h2`
     padding-bottom: 26px;
     font-weight: 700;
     font-size: 30px;
     color: #ADD8E6;
-`
+`;
 // Reusable styled components
 export const StyledInput = styled.input`
 background: none;
@@ -63,13 +62,13 @@ margin: 25px 0;
     color: #ADD8E6;
   @include shrinkLabel();
 }
-`
+`;
 export const ButtonContainer = styled.div`
 display: flex;
 align-items: center;
 text-decoration: none;
 justify-content: center;
-`
+`;
 export const StandardButton = styled(LinkR)`
 border-radius: 50px;
 background: #ADD8E6;
@@ -89,9 +88,9 @@ text-decoration: none;
     color: #010606;
 }
 
-`
+`;
 export const ButtonsSideBySide = styled.div`
     display: flex;
     justify-content: space-between;
     padding-top: 10px;
-`
+`;

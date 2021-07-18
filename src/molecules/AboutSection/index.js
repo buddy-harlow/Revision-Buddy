@@ -1,12 +1,11 @@
-import React from 'react'
-import { RowContainer } from '../../atoms/StyledContainers'
-import { Callout } from '../../atoms/StyledComponents'
-import {TwoColumn} from '../../atoms/StyledContainers'
+import React from 'react';
+import { RowContainer, TwoColumn } from '../../atoms/StyledContainers';
+import { Callout } from '../../atoms/StyledComponents';
 
 import { MdLibraryMusic } from 'react-icons/md';
 
 const AboutSection = () => {
-    return (
+  return (
         <>
         <RowContainer>
             <TwoColumn>
@@ -22,12 +21,12 @@ const AboutSection = () => {
             </TwoColumn>
             <TwoColumn>
                 <div>
-                    <MdLibraryMusic style={{fontSize: "10rem", color: "#ADD8E6"}}/>
+                    <MdLibraryMusic style={{ fontSize: '10rem', color: '#ADD8E6' }}/>
                 </div>
             </TwoColumn>
         </RowContainer>
         </>
-    )
-}
+  );
+};
 
-export default AboutSection
+export default AboutSection;
