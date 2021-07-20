@@ -1,7 +1,7 @@
-import styled from 'styled-components';
-import { FaTimes } from 'react-icons/fa';
-import { Link as LinkR } from 'react-router-dom';
-import { Link as LinkS } from 'react-scroll';
+import styled from 'styled-components'
+import { FaTimes } from 'react-icons/fa'
+import { Link as LinkR } from 'react-router-dom'
+import { Link as LinkS } from 'react-scroll'
 
 export const SidebarContainer = styled.aside`
     position: fixed;
@@ -16,11 +16,11 @@ export const SidebarContainer = styled.aside`
     transition: 0.3s ease-in-out;
     opacity: ${({ isOpen }) => (isOpen ? '100%' : '0%')};
     top: ${({ isOpen }) => (isOpen ? '0' : '-100%')};
-`;
+`
 
 export const CloseIcon = styled(FaTimes)`
     color: #fff;
-`;
+`
 
 export const Icon = styled.div`
     position: absolute;
@@ -30,11 +30,11 @@ export const Icon = styled.div`
     font-size: 2rem;
     cursor: pointer;
     outline: none;
-`;
+`
 
 export const SidebarWrapper = styled.div`
     color: #fff;
-`;
+`
 
 export const SidebarMenu = styled.ul`
     display: grid;
@@ -45,7 +45,7 @@ export const SidebarMenu = styled.ul`
     @media screen and (max-width: 480px) {
         grid-template-rows: repeat(6, 60px);
     }
-`;
+`
 
 export const SidebarLink = styled(LinkS)`
     display: flex;
@@ -63,12 +63,12 @@ export const SidebarLink = styled(LinkS)`
         color: #01bf71;
         transition: 0.2s ease-in-out;
     }
-`;
+`
 
 export const SideBtnWrap = styled.div`
     display: flex;
     justify-content: center;
-`;
+`
 
 export const SidebarRoute = styled(LinkR)`
     border-radius: 50px;
@@ -88,4 +88,4 @@ export const SidebarRoute = styled(LinkR)`
         background: #fff;
         color: #010606;
     }
-`;
+`

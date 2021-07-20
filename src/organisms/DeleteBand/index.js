@@ -1,8 +1,8 @@
-import React from 'react';
-import styled from 'styled-components';
-import { StyledInput, StandardButton, Callout } from './../../atoms/StyledComponents';
-import { MdClose } from 'react-icons/md';
-import { firestore, storage } from '../../firebase/firebase.utils';
+import React from 'react'
+import styled from 'styled-components'
+import { MdClose } from 'react-icons/md'
+import { StyledInput, StandardButton, Callout } from '../../atoms/StyledComponents'
+import { firestore, storage } from '../../firebase/firebase.utils'
 
 const Background = styled.div`
     width: 100%;
@@ -12,7 +12,7 @@ const Background = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-`;
+`
 
 const ModalWrapper = styled.div`
 width: 800px;
@@ -26,38 +26,45 @@ flex-direction: column;
 position: relative;
 z-index: 100;
 border-radius: 10px;
-`;
+`
 
 const DeleteBand = (props) => {
   const onDelete = () => {
-    const db = firestore;
-    const imageRef = storage.refFromURL(props.currentRecord.imgUrl);
-    imageRef.delete();
-    db.collection('albums').doc(props.currentRecord.id).delete();
-    console.log(props.currentRecord.id);
+    const db = firestore
+    const imageRef = storage.refFromURL(props.currentRecord.imgUrl)
+    imageRef.delete()
+    db.collection('albums').doc(props.currentRecord.id).delete()
+    console.log(props.currentRecord.id)
 
-    onClose();
-  };
+    onClose()
+  }
 
   const onClose = () => {
-    props.setShowDeleteModal(prev => !prev);
-    props.setCurrentRecord(null);
-  };
+    props.setShowDeleteModal((prev) => !prev)
+    props.setCurrentRecord(null)
+  }
 
   return (
-        <>
-        {props.showDeleteModal
-          ? <Background>
+    <>
+      {props.showDeleteModal
+        ? (
+          <Background>
             <ModalWrapper>
-            <Callout>Are you sure you want to delete {props.currentRecord.bandName}?<MdClose onClick={onClose} style={{ float: 'right', cursor: 'pointer' }}/></Callout>
+              <Callout>
+                Are you sure you want to delete
+                {props.currentRecord.bandName}
+                ?
+                <MdClose onClick={onClose} style={{ float: 'right', cursor: 'pointer' }} />
+              </Callout>
 
-            <StandardButton onClick={onDelete} style={{ width: '40%' }}>Delete Band</StandardButton>
+              <StandardButton onClick={onDelete} style={{ width: '40%' }}>Delete Band</StandardButton>
             </ModalWrapper>
-        </Background>
-          : null}
+          </Background>
+        )
+        : null}
 
-        </>
-  );
-};
+    </>
+  )
+}
 
-export default DeleteBand;
+export default DeleteBand

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const SignInBlock = styled.div`
     width: 60%;
@@ -16,17 +16,17 @@ export const SignInBlock = styled.div`
             display: none;
         }
     
-`;
+`
 
 export const Title = styled.h2`
     margin: 10px 0;
     color: #ADD8E6;
     text-align: center;
-`;
+`
 export const Buttons = styled.div`
     display: flex;
     justify-content: space-between;
-`;
+`
 export const Button = styled.button`
     border-radius: 50px;
     background: #ADD8E6;
@@ -45,4 +45,4 @@ export const Button = styled.button`
         background: #fff;
         color: #010606;
     }
-`;
+`

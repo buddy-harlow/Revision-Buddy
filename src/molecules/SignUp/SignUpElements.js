@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const SignUpBlock = styled.div`
     width: 40%;
@@ -10,16 +10,16 @@ export const SignUpBlock = styled.div`
         width: 80%
     }
     
-`;
+`
 
 export const Title = styled.h2`
     margin: 10px 0;
     color: #ADD8E6;
-`;
+`
 export const Buttons = styled.div`
     display: flex;
     justify-content: space-between;
-`;
+`
 export const Button = styled.button`
     border-radius: 50px;
     background: #ADD8E6;
@@ -38,4 +38,4 @@ export const Button = styled.button`
         background: #fff;
         color: #010606;
     }
-`;
+`

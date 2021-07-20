@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
-import { StyledInput, StandardButton, Callout } from './../../atoms/StyledComponents';
-import { MdClose } from 'react-icons/md';
-import { firestore, storage } from '../../firebase/firebase.utils';
-import spinner from '../../atoms/spinner.gif';
+import React, { useState } from 'react'
+import styled from 'styled-components'
+import { MdClose } from 'react-icons/md'
+import { StyledInput, StandardButton, Callout } from '../../atoms/StyledComponents'
+import { firestore, storage } from '../../firebase/firebase.utils'
+import spinner from '../../atoms/spinner.gif'
 
 const Background = styled.div`
     width: 100%;
@@ -13,7 +13,7 @@ const Background = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-`;
+`
 
 const ModalWrapper = styled.div`
 width: 800px;
@@ -27,66 +27,74 @@ flex-direction: column;
 position: relative;
 z-index: 100;
 border-radius: 10px;
-`;
+`
 
 const AddBand = ({ showBandModal, setShowBandModal }) => {
-  const [bandName, setName] = useState('');
+  const [bandName, setName] = useState('')
 
-  const [fileUrl, setFileUrl] = useState('');
-  const [loading, setLoading] = useState(true);
+  const [fileUrl, setFileUrl] = useState('')
+  const [loading, setLoading] = useState(true)
 
   const onSubmit = async () => {
-    const db = firestore;
+    const db = firestore
     if (!fileUrl) {
-      return;
+      return
     }
-    db.collection('albums').add({ bandName: bandName, imgUrl: fileUrl });
-    setShowBandModal(prev => !prev);
-    setFileUrl('');
-    setName('');
-    setLoading(true);
-  };
+    db.collection('albums').add({ bandName, imgUrl: fileUrl })
+    setShowBandModal((prev) => !prev)
+    setFileUrl('')
+    setName('')
+    setLoading(true)
+  }
 
   const onFileChange = async (e) => {
-    const file = e.target.files[0];
+    const file = e.target.files[0]
 
-    const storageRef = storage.ref();
-    const fileRef = storageRef.child(file.name);
-    await fileRef.put(file);
-    setFileUrl(await fileRef.getDownloadURL());
+    const storageRef = storage.ref()
+    const fileRef = storageRef.child(file.name)
+    await fileRef.put(file)
+    setFileUrl(await fileRef.getDownloadURL())
 
-    await setLoading(false);
-    console.log(loading);
-  };
+    await setLoading(false)
+    console.log(loading)
+  }
 
   const onClose = () => {
-    setShowBandModal(prev => !prev);
-    setName('');
-  };
+    setShowBandModal((prev) => !prev)
+    setName('')
+  }
 
   return (
-        <>
-        {showBandModal
-          ? <Background>
+    <>
+      {showBandModal
+        ? (
+          <Background>
             <ModalWrapper>
-                <Callout>Add a Project<MdClose onClick={onClose} style={{ float: 'right', cursor: 'pointer' }}/></Callout>
+              <Callout>
+                Add a Project
+                <MdClose onClick={onClose} style={{ float: 'right', cursor: 'pointer' }} />
+              </Callout>
 
-            <StyledInput value={bandName} placeholder="Band Name" onChange={(e) => {
-              setName(e.target.value);
-            }}></StyledInput>
+              <StyledInput
+                value={bandName}
+                placeholder="Band Name"
+                onChange={(e) => {
+                  setName(e.target.value)
+                }}
+              />
 
-            <StyledInput type="file" placeholder="Band Name" onChange={onFileChange}></StyledInput>
+              <StyledInput type="file" placeholder="Band Name" onChange={onFileChange} />
 
-            {loading
-              ? <StandardButton onClick={onSubmit} style={{ width: '40%', color: '#86A7B3' }} disabled>Add Band</StandardButton>
-              : <StandardButton onClick={onSubmit} style={{ width: '40%' }}>Add Band</StandardButton>
-            }
+              {loading
+                ? <StandardButton onClick={onSubmit} style={{ width: '40%', color: '#86A7B3' }} disabled>Add Band</StandardButton>
+                : <StandardButton onClick={onSubmit} style={{ width: '40%' }}>Add Band</StandardButton>}
             </ModalWrapper>
-        </Background>
-          : null}
+          </Background>
+        )
+        : null}
 
-        </>
-  );
-};
+    </>
+  )
+}
 
-export default AddBand;
+export default AddBand
