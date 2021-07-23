@@ -20,7 +20,6 @@ const EngineerPage = () => {
 
   const onDelete = (album) => {
     setCurrentRecord(album)
-    console.log(currentRecord)
     setShowDeleteModal((prev) => !prev)
   }
 
@@ -44,7 +43,12 @@ const EngineerPage = () => {
           <StandardButton onClick={openBandModal}>Add a Project</StandardButton>
         </ButtonContainer>
         <AddBand showBandModal={showBandModal} setShowBandModal={setShowBandModal} />
-        <DeleteBand showDeleteModal={showDeleteModal} setShowDeleteModal={setShowDeleteModal} currentRecord={currentRecord} setCurrentRecord={setCurrentRecord} />
+        <DeleteBand
+          showDeleteModal={showDeleteModal}
+          setShowDeleteModal={setShowDeleteModal}
+          currentRecord={currentRecord}
+          setCurrentRecord={setCurrentRecord}
+        />
       </GeneralContainer>
       <BlackBackground>
         <GridContainer>

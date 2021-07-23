@@ -20,6 +20,10 @@
     ],
     "rules": {
 			"react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-			"semi": [2, "never"]
+			"semi": [2, "never"],
+            "react/jsx-props-no-spreading": "off",
+            "react/prop-types": "off",
+            "import/no-named-as-default": 0
+
     }
 }

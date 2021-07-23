@@ -1,7 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import { MdClose } from 'react-icons/md'
-import { StyledInput, StandardButton, Callout } from '../../atoms/StyledComponents'
+import PropTypes from 'prop-types'
+import { StandardButton, Callout } from '../../atoms/StyledComponents'
 import { firestore, storage } from '../../firebase/firebase.utils'
 
 const Background = styled.div`
@@ -29,30 +30,33 @@ border-radius: 10px;
 `
 
 const DeleteBand = (props) => {
+  const {
+    currentRecord, setShowDeleteModal, setCurrentRecord, showDeleteModal,
+  } = props
+
+  const onClose = () => {
+    setShowDeleteModal((prev) => !prev)
+    setCurrentRecord(null)
+  }
+
   const onDelete = () => {
     const db = firestore
-    const imageRef = storage.refFromURL(props.currentRecord.imgUrl)
+    const imageRef = storage.refFromURL(currentRecord.imgUrl)
     imageRef.delete()
-    db.collection('albums').doc(props.currentRecord.id).delete()
-    console.log(props.currentRecord.id)
+    db.collection('albums').doc(currentRecord.id).delete()
 
     onClose()
   }
 
-  const onClose = () => {
-    props.setShowDeleteModal((prev) => !prev)
-    props.setCurrentRecord(null)
-  }
-
   return (
     <>
-      {props.showDeleteModal
+      {showDeleteModal
         ? (
           <Background>
             <ModalWrapper>
               <Callout>
                 Are you sure you want to delete
-                {props.currentRecord.bandName}
+                {currentRecord.bandName}
                 ?
                 <MdClose onClick={onClose} style={{ float: 'right', cursor: 'pointer' }} />
               </Callout>
@@ -67,4 +71,14 @@ const DeleteBand = (props) => {
   )
 }
 
+DeleteBand.propTypes = {
+  currentRecord: PropTypes.shape({
+    imgUrl: PropTypes.string,
+    id: PropTypes.string,
+    bandName: PropTypes.string,
+  }).isRequired,
+  setShowDeleteModal: PropTypes.func.isRequired,
+  setCurrentRecord: PropTypes.func.isRequired,
+  showDeleteModal: PropTypes.bool.isRequired,
+}
 export default DeleteBand

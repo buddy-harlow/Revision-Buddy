@@ -10,7 +10,7 @@ import SignUpPage from './pages/SignUpPage'
 import EngineerPage from './pages/EngineerPage'
 
 import { auth } from './firebase/firebase.utils'
-import { UserContext } from './context/UserContext'
+import UserContext from './context/UserContext'
 
 export const App = () => {
   const [currentUser, setCurrentUser] = useState(null)

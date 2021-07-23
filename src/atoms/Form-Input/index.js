@@ -21,7 +21,9 @@ const FormInput = ({ handleChange, label, ...otherProps }) => (
   </FormGroup>
 )
 
-FormInput.PropTypes = {
+FormInput.propTypes = {
+  handleChange: PropTypes.func.isRequired,
+  label: PropTypes.string.isRequired,
 
 }
 

@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import { MdClose } from 'react-icons/md'
+import PropTypes from 'prop-types'
 import { StyledInput, StandardButton, Callout } from '../../atoms/StyledComponents'
 import { firestore, storage } from '../../firebase/firebase.utils'
-import spinner from '../../atoms/spinner.gif'
 
 const Background = styled.div`
     width: 100%;
@@ -56,7 +56,6 @@ const AddBand = ({ showBandModal, setShowBandModal }) => {
     setFileUrl(await fileRef.getDownloadURL())
 
     await setLoading(false)
-    console.log(loading)
   }
 
   const onClose = () => {
@@ -97,4 +96,8 @@ const AddBand = ({ showBandModal, setShowBandModal }) => {
   )
 }
 
+AddBand.propTypes = ({
+  showBandModal: PropTypes.bool.isRequired,
+  setShowBandModal: PropTypes.func.isRequired,
+})
 export default AddBand

@@ -1,14 +1,13 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { MdDelete } from 'react-icons/md'
 import { Callout } from '../atoms/StyledComponents'
-import DeleteBand from '../organisms/DeleteBand'
 
 const Record = (props) => {
-  const { bandName, imgUrl } = props.album
+  const { album: { bandName, imgUrl }, setCurrentRecord, setShowDeleteModal } = props
 
   const onDelete = () => {
-    props.setCurrentRecord(props.album)
-    props.setShowDeleteModal((prev) => !prev)
+    setCurrentRecord(props.album)
+    setShowDeleteModal((prev) => !prev)
   }
 
   return (

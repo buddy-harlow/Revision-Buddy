@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from 'styled-components'
 import { Link as LinkR } from 'react-router-dom'
 import Banner from '../images/Hero.jpg'

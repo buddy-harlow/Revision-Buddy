@@ -7,7 +7,7 @@ class SignUp extends React.Component {
       <div>
 
         <p>
-          The most creative part of Audio Engineering shouldn't be
+          The most creative part of Audio Engineering shouldn&apos;t be
           managing client relations. Mix Buddy is a tool designed keep
           client relationships as organized as possible so you can spend
           more time listening to critical material and less time tracking down
