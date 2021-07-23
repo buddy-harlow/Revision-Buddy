@@ -8,6 +8,7 @@ import Home from './pages/Home'
 import SignInPage from './pages/SignInPage'
 import SignUpPage from './pages/SignUpPage'
 import EngineerPage from './pages/EngineerPage'
+import AlbumPage from './pages/AlbumPage'
 
 import { auth } from './firebase/firebase.utils'
 import UserContext from './context/UserContext'
@@ -28,7 +29,7 @@ export const App = () => {
         <FullNav />
         <Switch>
           <Route path="/" component={Home} exact />
-
+          <Route path="/album/:id" render={(props) => <AlbumPage {...props} />} />
           <Route
             exact
             path="/sign-in"
