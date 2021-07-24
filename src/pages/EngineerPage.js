@@ -57,6 +57,7 @@ const EngineerPage = () => {
             <Record
               bandName={album.bandName}
               imgUrl={album.imgUrl}
+              id={album.id}
               album={album}
               showDeleteModal={showDeleteModal}
               setShowDeleteModal={setShowDeleteModal}

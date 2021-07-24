@@ -1,9 +1,10 @@
 import React from 'react'
 import { MdDelete } from 'react-icons/md'
+import { Link as LinkR } from 'react-router-dom'
 import { Callout } from '../atoms/StyledComponents'
 
 const Record = (props) => {
-  const { album: { bandName, imgUrl }, setCurrentRecord, setShowDeleteModal } = props
+  const { album: { bandName, imgUrl, id }, setCurrentRecord, setShowDeleteModal } = props
 
   const onDelete = () => {
     setCurrentRecord(props.album)
@@ -12,7 +13,9 @@ const Record = (props) => {
 
   return (
     <div style={{ width: '300px', height: '500px' }}>
-      <img src={imgUrl} alt={bandName} style={{ height: '300px', width: '300px', objectFit: 'cover' }} />
+      <LinkR to={`/album/${id}`} props={bandName}>
+        <img src={imgUrl} alt={bandName} style={{ height: '300px', width: '300px', objectFit: 'cover' }} />
+      </LinkR>
       <Callout style={{ textAlign: 'center', paddingTop: '10px' }}>
         {bandName}
         <MdDelete

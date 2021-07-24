@@ -5,7 +5,7 @@ import { FaPlay, FaPause } from 'react-icons/fa'
 
 import styles from './AudioPlayer.Module.css'
 
-const AudioPlayer = () => {
+const AudioPlayer = ({ selectedSong }) => {
   const [isPlaying, setIsPlaying] = useState(false)
   const [duration, setDuration] = useState(0)
   const [currentTime, setCurrentTime] = useState(0)
@@ -69,7 +69,7 @@ const AudioPlayer = () => {
 
   return (
     <div className={styles.audioPlayer}>
-      <audio ref={audioPlayer} src="https://www.dropbox.com/s/ecer7ybgcz2101f/Pre-adam.wav?raw=1" preload="auto" />
+      <audio ref={audioPlayer} src={selectedSong} preload="auto" />
       <button className={styles.audioPlayerBtn} onClick={backThirty}>
         <BsArrowLeftShort />
         {' '}
