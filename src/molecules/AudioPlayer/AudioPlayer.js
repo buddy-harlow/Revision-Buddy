@@ -70,30 +70,30 @@ const AudioPlayer = ({ selectedSong }) => {
   return (
     <div className={styles.audioPlayer}>
       <div className={styles.bar}>
-      {/** Current Time */}
-      <div className={styles.time}>{calculateTime(currentTime)}</div>
+        {/** Current Time */}
+        <div className={styles.time}>{calculateTime(currentTime)}</div>
 
-      {/** Progress Bar */}
-      <input type="range" className={styles.progressBar} defaultValue="0" ref={progressBar} onChange={changeRange} />
-      {/** Duration */}
-      <div className={styles.time}>{(duration && !isNaN(duration)) && calculateTime(duration)}</div>
+        {/** Progress Bar */}
+        <input type="range" className={styles.progressBar} defaultValue="0" ref={progressBar} onChange={changeRange} />
+        {/** Duration */}
+        <div className={styles.time}>{(duration && !isNaN(duration)) && calculateTime(duration)}</div>
       </div>
       <div className={styles.btnPanel}>
-      <audio ref={audioPlayer} src={selectedSong} preload="auto" />
-      <button className={styles.audioPlayerBtn} onClick={backThirty}>
-        <BsArrowLeftShort />
-        {' '}
-        30
-      </button>
-      <button onClick={togglePlayPause} className={styles.audioPlayerBtn}>
-        { isPlaying ? <FaPause /> : <FaPlay />}
-      </button>
-      <button className={styles.audioPlayerBtn} onClick={forwardThirty}>
-        30
-        <BsArrowRightShort />
-      </button>
+        <audio ref={audioPlayer} src={selectedSong.fileUrl} preload="auto" />
+        <button className={styles.audioPlayerBtn} onClick={backThirty}>
+          <BsArrowLeftShort />
+          {' '}
+          30
+        </button>
+        <button onClick={togglePlayPause} className={styles.audioPlayerBtn}>
+          { isPlaying ? <FaPause /> : <FaPlay />}
+        </button>
+        <button className={styles.audioPlayerBtn} onClick={forwardThirty}>
+          30
+          <BsArrowRightShort />
+        </button>
       </div>
-      </div>
+    </div>
   )
 }
 

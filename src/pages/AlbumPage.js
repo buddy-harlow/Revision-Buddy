@@ -9,7 +9,7 @@ import Notes from '../molecules/Notes'
 const AlbumPage = ({ match: { params: { id, uid } } }) => {
   const [songs, setSongs] = useState([])
   const [album, setAlbum] = useState({})
-  const [selectedSong, setSelectedSong] = useState()
+  const [selectedSong, setSelectedSong] = useState('')
 
   useEffect(() => {
     const fetchData = async () => {
@@ -21,7 +21,6 @@ const AlbumPage = ({ match: { params: { id, uid } } }) => {
           setAlbum(doc.data())
           setSongs(doc.data().songs)
           
-
         } else {
           console.log('Try again bud')
         }
@@ -37,10 +36,10 @@ const AlbumPage = ({ match: { params: { id, uid } } }) => {
         <Header>{album.bandName}</Header>
       <RowContainer>
       <TwoColumn>
-      {songs.map((song) => (<Callout style={{ cursor: 'pointer' }} onClick={() => setSelectedSong(song.fileUrl)}>{song.title}</Callout>))}
+      {songs.map((song) => (<Callout style={{ cursor: 'pointer' }} onClick={() => setSelectedSong(song)}>{song.title}</Callout>))}
       </TwoColumn>
       <TwoColumn>
-        <Notes></Notes>
+        <Notes notes={}></Notes>
       </TwoColumn>
       </RowContainer>
     <AudioPlayer selectedSong={selectedSong} />

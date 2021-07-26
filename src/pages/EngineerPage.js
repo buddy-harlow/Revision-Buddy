@@ -9,7 +9,7 @@ import AddBand from '../organisms/AddBand'
 import DeleteBand from '../organisms/DeleteBand'
 
 const EngineerPage = () => {
-  const { currentUser: {uid}, setCurrentUser } = useContext(UserContext)
+  const { currentUser: { uid }, setCurrentUser } = useContext(UserContext)
   const [albums, setAlbums] = useState([])
   const [showBandModal, setShowBandModal] = useState(false)
   const [showDeleteModal, setShowDeleteModal] = useState(false)
