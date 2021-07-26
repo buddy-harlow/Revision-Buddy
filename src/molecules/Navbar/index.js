@@ -15,7 +15,6 @@ import { StandardButton, ButtonContainer } from '../../atoms/StyledComponents'
 
 const Navbar = ({ toggle }) => {
   const { currentUser, setCurrentUser } = useContext(UserContext)
-
   const signOut = () => {
     auth.signOut()
     setCurrentUser(null)

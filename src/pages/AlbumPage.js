@@ -1,40 +1,52 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
+import UserContext from '../context/UserContext'
 import { Header, Callout } from '../atoms/StyledComponents'
-import { GeneralContainer, SingleColumn } from '../atoms/StyledContainers'
+import { GeneralContainer, RowContainer, TwoColumn } from '../atoms/StyledContainers'
 import { firestore } from '../firebase/firebase.utils'
 import AudioPlayer from '../molecules/AudioPlayer/AudioPlayer'
+import Notes from '../molecules/Notes'
 
-const AlbumPage = ({ match: { params: { id } } }) => {
+const AlbumPage = ({ match: { params: { id, uid } } }) => {
   const [songs, setSongs] = useState([])
   const [album, setAlbum] = useState({})
-  const [selectedSong, setSelectedSong] = useState('')
+  const [selectedSong, setSelectedSong] = useState()
 
   useEffect(() => {
     const fetchData = async () => {
       const db = firestore
 
-      const data = await db.collection('albums').doc(id)
+      const data = await db.collection(uid).doc(id)
       data.get().then((doc) => {
         if (doc.exists) {
           setAlbum(doc.data())
           setSongs(doc.data().songs)
+          
+
         } else {
           console.log('Try again bud')
         }
       })
     }
     fetchData()
-  }, [])
+    
+  }, )
 
   return (
+    <>
     <GeneralContainer>
-      <SingleColumn>
         <Header>{album.bandName}</Header>
-        {songs.map((song) => (<Callout style={{ cursor: 'pointer' }} onClick={() => setSelectedSong(song.fileUrl)}>{song.name}</Callout>))}
-        <AudioPlayer selectedSong={selectedSong} />
-      </SingleColumn>
+      <RowContainer>
+      <TwoColumn>
+      {songs.map((song) => (<Callout style={{ cursor: 'pointer' }} onClick={() => setSelectedSong(song.fileUrl)}>{song.title}</Callout>))}
+      </TwoColumn>
+      <TwoColumn>
+        <Notes></Notes>
+      </TwoColumn>
+      </RowContainer>
+    <AudioPlayer selectedSong={selectedSong} />
     </GeneralContainer>
-
+  
+    </>
   )
 }
 

@@ -29,7 +29,7 @@ export const App = () => {
         <FullNav />
         <Switch>
           <Route path="/" component={Home} exact />
-          <Route path="/album/:id" render={(props) => <AlbumPage {...props} />} />
+          <Route path="/album/:uid/:id" render={(props) => <AlbumPage {...props} />} />
           <Route
             exact
             path="/sign-in"

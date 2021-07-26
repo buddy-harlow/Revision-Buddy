@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-
+import React, { useEffect, useState, useContext } from 'react'
+import UserContext from '../context/UserContext'
 import { GridContainer, GeneralContainer, BlackBackground } from '../atoms/StyledContainers'
 import { firestore } from '../firebase/firebase.utils'
 import { Header, StandardButton, ButtonContainer } from '../atoms/StyledComponents'
@@ -9,24 +9,25 @@ import AddBand from '../organisms/AddBand'
 import DeleteBand from '../organisms/DeleteBand'
 
 const EngineerPage = () => {
+  const { currentUser: {uid}, setCurrentUser } = useContext(UserContext)
   const [albums, setAlbums] = useState([])
   const [showBandModal, setShowBandModal] = useState(false)
   const [showDeleteModal, setShowDeleteModal] = useState(false)
-  const [currentRecord, setCurrentRecord] = useState(null)
-
+  const [currentProject, setCurrentProject] = useState(null)
+  console.log(uid)
   const openBandModal = () => {
     setShowBandModal((prev) => !prev)
   }
 
   const onDelete = (album) => {
-    setCurrentRecord(album)
+    setCurrentProject(album)
     setShowDeleteModal((prev) => !prev)
   }
 
   useEffect(() => {
     const fetchData = async () => {
       const db = firestore
-      const data = await db.collection('albums').get()
+      const data = await db.collection(uid).get()
       setAlbums(data.docs.map(
         (doc) => ({ ...doc.data(), id: doc.id }),
       )
@@ -46,8 +47,8 @@ const EngineerPage = () => {
         <DeleteBand
           showDeleteModal={showDeleteModal}
           setShowDeleteModal={setShowDeleteModal}
-          currentRecord={currentRecord}
-          setCurrentRecord={setCurrentRecord}
+          currentProject={currentProject}
+          setCurrentProject={setCurrentProject}
         />
       </GeneralContainer>
       <BlackBackground>
@@ -62,8 +63,8 @@ const EngineerPage = () => {
               showDeleteModal={showDeleteModal}
               setShowDeleteModal={setShowDeleteModal}
               onDelete={onDelete}
-              currentRecord={currentRecord}
-              setCurrentRecord={setCurrentRecord}
+              currentRecord={currentProject}
+              setCurrentRecord={setCurrentProject}
             />
 
           ))}

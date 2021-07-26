@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { Link as LinkR } from 'react-router-dom'
 
 export const Nav = styled.nav`
-    background: #000000;
+    background: #181A18;
     height: 10vh;
     display: flex;
     justify-content: center;

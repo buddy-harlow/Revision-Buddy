@@ -37,7 +37,7 @@ export const RowContainer = styled.div`
 display: flex;
 flex-direction: row;
 flex-wrap: wrap;
-background-color: black;
+background-color: #181A18;
 padding: 50px 0;
 color: white;
 align-items: center;
@@ -45,7 +45,7 @@ justify-content: space-around;
 width: 100%
 `
 export const BlackBackground = styled.div`
-background-color: black;
+background-color: #181A18;
 width: 100%;
 padding-top: 30px;
 padding-bottom: 30px;
@@ -61,7 +61,7 @@ export const GridContainer = styled.div`
 
 export const GeneralContainer = styled.div`
     width: 100%;
-    background-color: #000000;
+    background-color: #181A18;
     display: flex;
     flex-direction: column;
 `

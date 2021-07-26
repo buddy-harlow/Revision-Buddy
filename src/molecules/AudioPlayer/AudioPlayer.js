@@ -69,6 +69,16 @@ const AudioPlayer = ({ selectedSong }) => {
 
   return (
     <div className={styles.audioPlayer}>
+      <div className={styles.bar}>
+      {/** Current Time */}
+      <div className={styles.time}>{calculateTime(currentTime)}</div>
+
+      {/** Progress Bar */}
+      <input type="range" className={styles.progressBar} defaultValue="0" ref={progressBar} onChange={changeRange} />
+      {/** Duration */}
+      <div className={styles.time}>{(duration && !isNaN(duration)) && calculateTime(duration)}</div>
+      </div>
+      <div className={styles.btnPanel}>
       <audio ref={audioPlayer} src={selectedSong} preload="auto" />
       <button className={styles.audioPlayerBtn} onClick={backThirty}>
         <BsArrowLeftShort />
@@ -82,15 +92,8 @@ const AudioPlayer = ({ selectedSong }) => {
         30
         <BsArrowRightShort />
       </button>
-
-      {/** Current Time */}
-      <div>{calculateTime(currentTime)}</div>
-
-      {/** Progress Bar */}
-      <input type="range" className={styles.progressBar} defaultValue="0" ref={progressBar} onChange={changeRange} />
-      {/** Duration */}
-      <div>{(duration && !isNaN(duration)) && calculateTime(duration)}</div>
-    </div>
+      </div>
+      </div>
   )
 }
 

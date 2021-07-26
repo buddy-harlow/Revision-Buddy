@@ -38,6 +38,11 @@ export const Callout = styled.h2`
     font-size: 30px;
     color: #ADD8E6;
 `
+export const Note = styled.li`
+    font-weight: 700;
+    font-size: 20px;
+    color: #ADD8E6;
+`
 // Reusable styled components
 export const StyledInput = styled.input`
 background: none;
