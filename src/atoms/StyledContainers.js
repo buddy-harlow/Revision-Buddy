@@ -1,13 +1,17 @@
 import styled from 'styled-components'
 
 export const SingleColumn = styled.div`
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    margin-left: 10%;
-    margin-right: 10%;
-    height: 90vh;
+width: 80%;
+display: flex;
+flex-direction: column;
+margin-left: 10%;
+margin-right: 10%;
+height: 90vh;
     
+`
+export const RowWrap = styled.div`
+display: flex;
+flex-direction: row;
 `
 export const TwoColumn = styled.div`
 display: flex;

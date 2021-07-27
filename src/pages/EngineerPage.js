@@ -14,7 +14,6 @@ const EngineerPage = () => {
   const [showBandModal, setShowBandModal] = useState(false)
   const [showDeleteModal, setShowDeleteModal] = useState(false)
   const [currentProject, setCurrentProject] = useState(null)
-  console.log(uid)
   const openBandModal = () => {
     setShowBandModal((prev) => !prev)
   }

@@ -6,7 +6,6 @@ import UserContext from '../context/UserContext'
 
 const Record = (props) => {
   const { album: { bandName, imgUrl, id }, setCurrentRecord, setShowDeleteModal } = props
-  const { currentUser: { uid }, setCurrentUser } = useContext(UserContext)
 
   const onDelete = () => {
     setCurrentRecord(props.album)
@@ -15,7 +14,7 @@ const Record = (props) => {
 
   return (
     <div style={{ width: '300px', height: '500px' }}>
-      <LinkR to={`/album/${uid}/${id}`}>
+      <LinkR to={`/album/${id}`}>
         <img src={imgUrl} alt={bandName} style={{ height: '300px', width: '300px', objectFit: 'cover' }} />
       </LinkR>
       <Callout style={{ textAlign: 'center', paddingTop: '10px' }}>

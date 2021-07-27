@@ -68,6 +68,7 @@ const AudioPlayer = ({ selectedSong }) => {
   }
 
   return (
+    <div className={styles.audioPlayerWrapper}>
     <div className={styles.audioPlayer}>
       <div className={styles.bar}>
         {/** Current Time */}
@@ -93,6 +94,7 @@ const AudioPlayer = ({ selectedSong }) => {
           <BsArrowRightShort />
         </button>
       </div>
+    </div>
     </div>
   )
 }

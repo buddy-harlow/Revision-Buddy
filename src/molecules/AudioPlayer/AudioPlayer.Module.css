@@ -6,8 +6,14 @@
 	margin: auto;
 	margin-top: 60px;
 	margin-bottom: 60px;
-	position: sticky;
-	top: 90;
+	left: 50;
+}
+.audioPlayerWrapper {
+	background-color: #181a18;
+	position: fixed;
+	height: 20vh;
+	width: 100%;
+	bottom: 0;
 }
 .bar {
 	display: flex;

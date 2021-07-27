@@ -38,19 +38,29 @@ export const Callout = styled.h2`
     font-size: 30px;
     color: #ADD8E6;
 `
+export const IconWrap = styled.span`
+    font-weight: 700;
+    font-size: 30px;
+    color: #ADD8E6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`
+
 export const Note = styled.li`
     font-weight: 700;
     font-size: 20px;
+    list-style-position: inside;
     color: #ADD8E6;
 `
 // Reusable styled components
 export const StyledInput = styled.input`
 background: none;
-background-color: black;
+background-color: #181A18;
+display: inline;
 color: #ADD8E6;
 font-size: 18px;
 padding: 10px 10px 10px 5px;
-display: block;
 width: 100%;
 border: none;
 border-radius: 0;
