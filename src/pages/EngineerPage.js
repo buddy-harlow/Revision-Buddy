@@ -1,5 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react'
 import UserContext from '../context/UserContext'
+import ProjectsContext from '../context/ProjectsContext'
+
 import { GridContainer, GeneralContainer, BlackBackground } from '../atoms/StyledContainers'
 import { firestore } from '../firebase/firebase.utils'
 import { Header, StandardButton, ButtonContainer } from '../atoms/StyledComponents'
@@ -10,7 +12,7 @@ import DeleteBand from '../organisms/DeleteBand'
 
 const EngineerPage = () => {
   const { currentUser: { uid }, setCurrentUser } = useContext(UserContext)
-  const [albums, setAlbums] = useState([])
+  const { projects, setProjects } = useContext(ProjectsContext)
   const [showBandModal, setShowBandModal] = useState(false)
   const [showDeleteModal, setShowDeleteModal] = useState(false)
   const [currentProject, setCurrentProject] = useState(null)
@@ -27,7 +29,7 @@ const EngineerPage = () => {
     const fetchData = async () => {
       const db = firestore
       const data = await db.collection(uid).get()
-      setAlbums(data.docs.map(
+      setProjects(data.docs.map(
         (doc) => ({ ...doc.data(), id: doc.id }),
       )
         .sort((a, b) => ((a.bandName > b.bandName) ? 1 : -1)))
@@ -52,13 +54,13 @@ const EngineerPage = () => {
       </GeneralContainer>
       <BlackBackground>
         <GridContainer>
-          {albums.map((album) => (
+          {projects.map((project) => (
 
             <Record
-              bandName={album.bandName}
-              imgUrl={album.imgUrl}
-              id={album.id}
-              album={album}
+              bandName={project.bandName}
+              imgUrl={project.imgUrl}
+              id={project.id}
+              album={project}
               showDeleteModal={showDeleteModal}
               setShowDeleteModal={setShowDeleteModal}
               onDelete={onDelete}

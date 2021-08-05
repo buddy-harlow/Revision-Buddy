@@ -1,8 +1,8 @@
 import React from 'react'
-import { HeroContainer } from '../../atoms/StyledContainers'
+import { HeroContainer } from '../atoms/StyledContainers'
 import {
   StandardButton, ButtonContainer, HeroText, HeroImage,
-} from '../../atoms/StyledComponents'
+} from '../atoms/StyledComponents'
 
 const Hero = () => (
   <div>

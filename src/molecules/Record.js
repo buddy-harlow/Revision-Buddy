@@ -2,10 +2,10 @@ import React, { useContext } from 'react'
 import { MdDelete } from 'react-icons/md'
 import { Link as LinkR } from 'react-router-dom'
 import { Callout } from '../atoms/StyledComponents'
-import UserContext from '../context/UserContext'
 
 const Record = (props) => {
   const { album: { bandName, imgUrl, id }, setCurrentRecord, setShowDeleteModal } = props
+
 
   const onDelete = () => {
     setCurrentRecord(props.album)

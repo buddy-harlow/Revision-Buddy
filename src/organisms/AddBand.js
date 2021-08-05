@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import { MdClose } from 'react-icons/md'
 import PropTypes from 'prop-types'
-import { StyledInput, StandardButton, Callout } from '../../atoms/StyledComponents'
-import { firestore, storage } from '../../firebase/firebase.utils'
+import { StyledInput, StandardButton, Callout } from '../atoms/StyledComponents'
+import { firestore, storage } from '../firebase/firebase.utils'
 
 const Background = styled.div`
     width: 100%;

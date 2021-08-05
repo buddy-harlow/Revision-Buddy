@@ -1,0 +1,38 @@
+body {
+	background-color: #181a18;
+}
+/*Audio Player Styles*/
+.rhap_container,
+.rhap_container *:focus {
+	outline: none;
+}
+.rhap_additional-controls {
+	color: #add8e6;
+	font-size: 20px;
+}
+.rhap_container {
+	background-color: rgba(0, 0, 0, 0);
+	position: fixed;
+	height: 10vh;
+	width: 100%;
+	bottom: 0;
+}
+.rhap_container svg {
+	color: #add8e6;
+}
+.rhap_time {
+	color: #add8e6;
+	font-size: 20px;
+}
+.rhap_progress-bar-show-download {
+	background-color: #add8e6;
+}
+.rhap_progress-indicator {
+	background-color: #add8e6;
+}
+.rhap_download-progress {
+	background-color: #add8e6;
+}
+.rhap_progress-filled {
+	background-color: #77c6e0;
+}

@@ -11,6 +11,13 @@ export const Header = styled.h1`
     padding-bottom: 50px;
     padding-top: 50px;
 `
+export const ImgWrapper = styled.h1`    
+    display: flex;
+    margin-top: 20px;
+    justify-content: center;
+    padding-bottom: 50px;
+`
+
 export const HeroText = styled.h1`
 text-transform: uppercase;
 text-align: center;

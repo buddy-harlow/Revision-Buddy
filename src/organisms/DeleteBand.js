@@ -2,8 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import { MdClose } from 'react-icons/md'
 import PropTypes from 'prop-types'
-import { StandardButton, Callout } from '../../atoms/StyledComponents'
-import { firestore, storage } from '../../firebase/firebase.utils'
+import { StandardButton, Callout } from '../atoms/StyledComponents'
+import { firestore, storage } from '../firebase/firebase.utils'
 
 const Background = styled.div`
     width: 100%;
@@ -56,7 +56,7 @@ const DeleteBand = (props) => {
             <ModalWrapper>
               <Callout>
                 Are you sure you want to delete
-                {currentProject.bandName}
+                {` ${currentProject.bandName}`}
                 ?
                 <MdClose onClick={onClose} style={{ float: 'right', cursor: 'pointer' }} />
               </Callout>

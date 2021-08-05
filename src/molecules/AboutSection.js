@@ -1,7 +1,7 @@
 import React from 'react'
 import { MdLibraryMusic } from 'react-icons/md'
-import { RowContainer, TwoColumn } from '../../atoms/StyledContainers'
-import { Callout } from '../../atoms/StyledComponents'
+import { RowContainer, TwoColumn } from '../atoms/StyledContainers'
+import { Callout } from '../atoms/StyledComponents'
 
 const AboutSection = () => (
   <>

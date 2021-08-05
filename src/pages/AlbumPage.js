@@ -1,56 +1,58 @@
 import React, { useEffect, useState, useContext } from 'react'
-import UserContext from '../context/UserContext'
-import { Header, Callout } from '../atoms/StyledComponents'
-import { GeneralContainer, RowContainer, TwoColumn } from '../atoms/StyledContainers'
-import { firestore } from '../firebase/firebase.utils'
-import AudioPlayer from '../molecules/AudioPlayer/AudioPlayer'
+import ProjectsContext from '../context/ProjectsContext'
+import { Header, Callout, ImgWrapper } from '../atoms/StyledComponents'
+import { RowContainer, TwoColumn } from '../atoms/StyledContainers'
+import Player from '../molecules/Player'
 import Notes from '../molecules/Notes'
 
 const AlbumPage = ({ match: { params: { id } } }) => {
-  const { currentUser } = useContext(UserContext)
-  const [songs, setSongs] = useState([])
+  const { projects } = useContext(ProjectsContext)
   const [album, setAlbum] = useState({})
-  const [selectedSong, setSelectedSong] = useState({})
+  const [isLoading, setIsLoading] = useState(true)
+  const [selectedSong, setSelectedSong] = useState(null)
+
 
   useEffect(() => {
-    const fetchData = async () => {
-      const db = firestore
-
-      const data = await db.collection(currentUser.uid).doc(id)
-      data.get().then((doc) => {
-        if (doc.exists) {
-          setAlbum(doc.data())
-          setSongs(doc.data().songs)
-          
-        } else {
-          console.log('Try again bud')
-        }
-      })
+    for (let i = 0; i < projects.length; i++) {
+      if (projects[i].id === id) {               
+          setAlbum(projects[i])        
+          setIsLoading(false)    
+      }
     }
-    fetchData()
+
   }, [])
 
-  const setSong = (e) => {
-    console.log(clicked)
-  }
-
+  if(isLoading){
+    return(
+      <div style={{color: 'white'}}>Should be a delay</div>
+    )
+  } else {
   return (
-    <>
-      <GeneralContainer>
-        <Header>{album.bandName}</Header>
-        <RowContainer>
-          <TwoColumn>
-            {songs.map((song) => (<Callout style={{ cursor: 'pointer' }} onClick={() => { setSelectedSong(song) }}>{song.title}</Callout>))}
-          </TwoColumn>
-          <TwoColumn>
-            { selectedSong ? <Notes selectedSong={selectedSong} /> : ''}
-          </TwoColumn>
-        </RowContainer>
-        <AudioPlayer selectedSong={selectedSong} />
-      </GeneralContainer>
 
+    <>
+    
+      <RowContainer>
+        <TwoColumn>
+          <Header>{album.bandName}</Header>
+          <ImgWrapper>
+            <img
+              src={album.imgUrl}
+              style={{
+                height: '200px', width: '200px', display: 'flex', justifyContent: 'center',
+              }}
+            />
+          </ImgWrapper>
+          {album.songs.map((song) => (<Callout style={{ cursor: 'pointer' }} onClick={() => { setSelectedSong(song) }}>{song.title}</Callout>))}
+        </TwoColumn>
+        <TwoColumn>
+          { selectedSong !== null && selectedSong !== undefined ? <Notes selectedSong={selectedSong} album={album} /> : <Callout>Choose a Song</Callout>}
+        </TwoColumn>
+      </RowContainer>
+      <Player selectedSong={selectedSong} />
     </>
+
   )
+}
 }
 
 export default AlbumPage
